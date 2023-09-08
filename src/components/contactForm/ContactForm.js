@@ -1,10 +1,8 @@
 import { Formik, Field, Form } from 'formik';
-// import { Container, FormItem } from './NewContact.styled';
 
-export  const AddContact = ({ create }) => {
-    return (
-        <>
-            <h1>Contacts</h1>
+export const AddContac = () => {
+  return( <div>
+     <h1>Contacts</h1>
             <Formik
             initialValues={{
                 name: '',
@@ -12,16 +10,21 @@ export  const AddContact = ({ create }) => {
             }}
             
             onSubmit={ (values,{resetForm}) => {
-                create(values);
+               
                 resetForm();
             }}
             >
             <Form>
                
                     <label htmlFor="Name">Name</label>
-                    <Field id="Name" name="name" placeholder="Jacob Mercer" type="text" required/>
-                
+                    <Field  type="text"
+                              name="name"
+                              placeholder="Jacob Mercer"
+                               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                                title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                                 required/>
                
+                
                     <label htmlFor="Number">Number</label>
                     <Field 
                     id="Number" 
@@ -32,13 +35,12 @@ export  const AddContact = ({ create }) => {
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required
                     />
-              
-                
+               
+               
                     <button type="submit">Add contact</button>
                 
             </Form>
             </Formik>
-       </>
-
-    );
-}
+  </div>
+  )   
+};

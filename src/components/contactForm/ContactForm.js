@@ -14,7 +14,10 @@ export const AddContac = ({create}) => {
                 resetForm();
             }}
             >
-            <Form>
+            <Form style={{padding : 10 ,
+            display: 'flex',
+            }}
+              >
                
                     <label htmlFor="Name">Name</label>
                     <Field  type="text"

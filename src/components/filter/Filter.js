@@ -5,7 +5,6 @@ export const Filter = ({ onFilter, initValue }) => {
             <>
                 <h2>Contacts</h2>
             
-           
                 <label htmlFor="filter">Filter</label>
                 <input 
                 id="filter"

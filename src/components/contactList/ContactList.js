@@ -2,12 +2,13 @@ import{ContactItem} from '../newContact/ContactItem'
 
 export const ContactList = ({ actual, onDelete }) => {
     return (
-        <ul>
+        <ol>
             {actual.map(contact => (
-                <li key={contact.id}>
+                <li 
+                  key={contact.id}>
                     <ContactItem item={contact} onDelete={onDelete}/>
-                </li>
+                </li >
             ))}
-        </ul>
+        </ol>
     );
 };

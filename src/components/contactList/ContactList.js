@@ -1,17 +1,13 @@
+import{ContactItem} from '../newContact/ContactItem'
 
-
-export const ContactsList =({contacts}) =>{
-    return(
-<ul>
- {contacts.map(contact => (
-    <li key={contact.id}>
-        {contact.name}  {contact.number} 
-        </li>
- 
- ))}
-
-
-
- </ul>
+export const ContactList = ({ actual, onDelete }) => {
+    return (
+        <ul>
+            {actual.map(contact => (
+                <li key={contact.id}>
+                    <ContactItem item={contact} onDelete={onDelete}/>
+                </li>
+            ))}
+        </ul>
     );
 };

@@ -1,6 +1,6 @@
 import { Formik, Field, Form } from 'formik';
 
-export const AddContac = () => {
+export const AddContac = ({create}) => {
   return( <div>
      <h1>Contacts</h1>
             <Formik
@@ -10,7 +10,7 @@ export const AddContac = () => {
             }}
             
             onSubmit={ (values,{resetForm}) => {
-               
+               create(values)
                 resetForm();
             }}
             >
